@@ -1,8 +1,8 @@
 # Deploy to Render with Supabase PostgreSQL
 
 1. **Create Supabase Project**: Go to [supabase.com](https://supabase.com), create a new project, copy `Database URL`, `User`, `Password`, and `JWT Secret` (from Project Settings > API).
-2. **Create Web Service on Render**: In Render Dashboard, click **New + > Web Service**, connect this Git repository, and set Root Directory to `backend`.
-3. **Select Docker Environment**: Set Runtime to **Docker** (Render will automatically detect `/backend/Dockerfile`).
+2. **Create Web Service on Render**: Click **New + > Web Service**, connect this Git repository (auto-detects root `Dockerfile` or set Root Directory to `backend`).
+3. **Runtime**: Select **Docker** (Render uses root `Dockerfile` or `backend/Dockerfile`).
 4. **Configure Environment Variables**:
    - `DATABASE_URL`: `jdbc:postgresql://<db-host>.supabase.co:5432/postgres` (or direct Supabase URI)
    - `DB_USER`: `postgres`
