@@ -1,0 +1,6 @@
+{
+  "name": "SweetDelight Cake & Chocolate Shop API",
+  "description": "Production-grade Spring Boot 3 backend API for an Indian cake and chocolate shop with Supabase Auth, PostgreSQL, Razorpay payments, delivery radius check, and party room booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

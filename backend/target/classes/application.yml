@@ -1,0 +1,57 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: sweetdelight-backend
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 20000
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+springdoc:
+  api-docs:
+    enabled: ${SWAGGER_ENABLED:true}
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: ${SWAGGER_ENABLED:true}
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+
+# Custom Application Properties
+app:
+  jwt:
+    supabase-secret: ${SUPABASE_JWT_SECRET:test-supabase-jwt-secret-key-at-least-32-chars-long}
+  razorpay:
+    key-id: ${RAZORPAY_KEY_ID:rzp_test_placeholder_key}
+    key-secret: ${RAZORPAY_KEY_SECRET:placeholder_secret}
+    webhook-secret: ${RAZORPAY_WEBHOOK_SECRET:placeholder_webhook_secret}
+  shop:
+    cod-enabled: ${COD_ENABLED:true}
+  notify:
+    mode: ${NOTIFY_MODE:console}
+    whatsapp-token: ${WHATSAPP_TOKEN:}
+    whatsapp-phone-id: ${WHATSAPP_PHONE_ID:}
+    admin-number: ${ADMIN_WHATSAPP_NUMBER:+919876543210}
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,https://your-github-username.github.io}

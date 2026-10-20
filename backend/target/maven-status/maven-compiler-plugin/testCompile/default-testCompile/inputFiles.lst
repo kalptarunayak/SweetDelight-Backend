@@ -1,0 +1,5 @@
+/app/applet/backend/src/test/java/com/sweetdelight/api/service/CouponDiscountTest.java
+/app/applet/backend/src/test/java/com/sweetdelight/api/service/HaversineDistanceTest.java
+/app/applet/backend/src/test/java/com/sweetdelight/api/service/RazorpaySignatureVerificationTest.java
+/app/applet/backend/src/test/java/com/sweetdelight/api/service/RoomOverlapLogicTest.java
+/app/applet/backend/src/test/java/com/sweetdelight/api/service/WebhookIdempotencyTest.java
